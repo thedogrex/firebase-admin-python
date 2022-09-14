@@ -44,7 +44,7 @@ MIN_SESSION_COOKIE_DURATION_SECONDS = int(datetime.timedelta(minutes=5).total_se
 MAX_SESSION_COOKIE_DURATION_SECONDS = int(datetime.timedelta(days=14).total_seconds())
 
 # Custom token constants
-MAX_TOKEN_LIFETIME_SECONDS = int(datetime.timedelta(hours=1).total_seconds())
+MAX_TOKEN_LIFETIME_SECONDS = int(datetime.timedelta(minutes=15).total_seconds())
 FIREBASE_AUDIENCE = ('https://identitytoolkit.googleapis.com/google.'
                      'identity.identitytoolkit.v1.IdentityToolkit')
 RESERVED_CLAIMS = set([
