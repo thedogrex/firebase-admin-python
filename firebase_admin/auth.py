@@ -191,7 +191,7 @@ def create_custom_token(uid, developer_claims=None, app=None):
     return client.create_custom_token(uid, developer_claims)
 
 
-def verify_id_token(id_token, app=None, check_revoked=False):
+def verify_id_token(id_token, app=None, check_revoked=False, clock_skew_in_seconds=0):
     """Verifies the signature and data for the provided JWT.
 
     Accepts a signed token string, verifies that it is current, and issued
@@ -217,7 +217,7 @@ def verify_id_token(id_token, app=None, check_revoked=False):
             record is disabled.
     """
     client = _get_client(app)
-    return client.verify_id_token(id_token, check_revoked=check_revoked)
+    return client.verify_id_token(id_token, check_revoked=check_revoked, clock_skew_in_seconds=clock_skew_in_seconds)
 
 
 def create_session_cookie(id_token, expires_in, app=None):
